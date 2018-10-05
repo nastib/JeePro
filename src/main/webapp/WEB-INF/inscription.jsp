@@ -21,32 +21,32 @@
                 
                 <div class="form-group">
                 <label for="email">Adresse email <span class="requis">*</span></label>
-                <input type="email" id="email" name="email" value="<c:out value="${param.email}"/>" size="20" maxlength="60" class="form-control"/>
+                <input type="email" id="email" name="email" value="<c:out value="${utilisateur.email}"/>" size="20" maxlength="60" class="form-control"/>
                 <small class="erreur">${erreurs['email']}</small>
                 </div>
 
                 <div class="form-group">
                 <label for="motdepasse">Mot de passe <span class="requis">*</span></label>
                 <input type="password" id="motdepasse" name="motdepasse" value="" size="20" maxlength="20" class="form-control"/>
-                <small class="erreur">${erreurs['motdepasse']}</small>
+                <small class="erreur">${form.erreurs['motdepasse']}</small>
                 </div>
 
                 <div class="form-group">
                 <label for="confirmation">Confirmation du mot de passe <span class="requis">*</span></label>
                 <input type="password" id="confirmation" name="confirmation" value="" size="20" maxlength="20" class="form-control"/>
-                <small class="erreur">${erreurs['confirmation']}</small>
+                <small class="erreur">${form.erreurs['confirmation']}</small>
                 </div>
 
                 <div class="form-group">
                 <label for="nom">Nom d'utilisateur</label>
-                <input type="text" id="nom" name="nom" value="<c:out value="${param.nom}"/>" size="20" maxlength="20" class="form-control"/>
-                <small class="erreur">${erreurs['nom']}</small>
+                <input type="text" id="nom" name="nom" value="<c:out value="${utilisateur.nom}"/>" size="20" maxlength="20" class="form-control"/>
+                <small class="erreur">${form.erreurs['nom']}</small>
                 </div>
 
                 <input type="submit" value="Inscription" class="btn btn-primary btn-lg" />
                 <br /> <br />
                 
-                <p class="${empty erreurs ? 'succes' : 'erreur'}">${resultat}</p>
+                <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
             </fieldset>
         </form>
     </body>
